@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             docsList.appendChild(docItem);
         });
     }
+});
 
 
 });

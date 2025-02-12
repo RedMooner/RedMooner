@@ -1,47 +1,122 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f4;
 }
 
 .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
     background-color: #fff;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    padding: 20px;
 }
 
-h1 {
+.left-sidebar {
+    width: 250px;
+    margin-right: 20px;
+}
+
+.profile {
     text-align: center;
-    color: #333;
 }
 
-ul {
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.contacts {
     list-style-type: none;
     padding: 0;
 }
 
-li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+.contacts li {
+    margin: 10px 0;
 }
 
-li:last-child {
-    border-bottom: none;
-}
-
-a {
+.contacts a {
     color: #0366d6;
     text-decoration: none;
 }
 
-a:hover {
+.contacts a:hover {
     text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.right-sidebar {
+    width: 300px;
+}
+
+.right-sidebar h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.repos-list, .docs-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repos-list li, .docs-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.repos-list li:last-child, .docs-list li:last-child {
+    border-bottom: none;
+}
+
+.repo-header, .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.repo-header h3, .doc-header h3 {
+    margin: 0;
+    color: #0366d6;
+}
+
+.repo-header h3:hover, .doc-header h3:hover {
+    text-decoration: underline;
+}
+
+.repo-details, .doc-details {
+    margin-top: 10px;
+    display: none;
+}
+
+.repo-details p, .doc-details p {
+    margin: 5px 0;
+}
+
+.repo-tags, .doc-tags {
+    margin-top: 10px;
+}
+
+.repo-tags span, .doc-tags span {
+    display: inline-block;
+    background-color: #e1ecf4;
+    color: #0366d6;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.9em;
 }

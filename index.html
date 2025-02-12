@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои репозитории на GitHub</title>
+    <title>Мое портфолио</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Мои репозитории на GitHub</h1>
-        <ul id="repos-list"></ul>
+        <!-- Левый блок -->
+        <aside class="left-sidebar">
+            <div class="profile">
+                <img src="47520961.jfif" alt="Аватарка" class="avatar">
+                <h1>Фамилия Имя</h1>
+                <ul class="contacts">
+                    <li><a href="mailto:example@example.com">Email</a></li>
+                    <li><a href="https://github.com/username">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/username">LinkedIn</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Центральный блок -->
+        <main class="content">
+            <section class="about-me">
+                <h2>Обо мне</h2>
+                <p>Здесь вы можете написать информацию о себе, своих навыках и опыте.</p>
+            </section>
+            <section class="knowledge-base">
+                <h2>База знаний</h2>
+                <ul id="docs-list"></ul>
+            </section>
+        </main>
+
+        <!-- Правый сайдбар -->
+        <aside class="right-sidebar">
+            <h2>Мои репозитории</h2>
+            <ul id="repos-list"></ul>
+        </aside>
     </div>
     <script src="script.js"></script>
 </body>

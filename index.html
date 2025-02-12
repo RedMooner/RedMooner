@@ -6,9 +6,16 @@
     <title>Мое портфолио</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Иконки FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Шапка сайта -->
+    <header class="bg-primary text-white text-center py-4">
+        <h1 class="mb-0">Портфолио и база знаний</h1>
+    </header>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Левый сайдбар -->
@@ -17,9 +24,9 @@
                     <img src="https://via.placeholder.com/150" alt="Аватарка" class="avatar rounded-circle mb-3">
                     <h1 class="h5">Фамилия Имя</h1>
                     <ul class="list-unstyled">
-                        <li><a href="mailto:example@example.com" class="text-decoration-none text-dark">Email</a></li>
-                        <li><a href="https://github.com/username" class="text-decoration-none text-dark">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/username" class="text-decoration-none text-dark">LinkedIn</a></li>
+                        <li><a href="mailto:example@example.com" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>Email</a></li>
+                        <li><a href="https://github.com/username" class="text-decoration-none text-dark"><i class="fab fa-github me-2"></i>GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/username" class="text-decoration-none text-dark"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
                     </ul>
                 </div>
             </aside>
@@ -27,18 +34,24 @@
             <!-- Основной контент -->
             <main class="col-md-9 col-lg-7 p-4">
                 <section class="about-me mb-5">
-                    <h2 class="h4">Обо мне</h2>
-                    <p>Здесь вы можете написать информацию о себе, своих навыках и опыте.</p>
+                    <h2 class="h4 mb-4"><i class="fas fa-user me-2"></i>Обо мне</h2>
+                    <p class="lead">Привет! Меня зовут [Ваше имя], и я [ваша профессия или специализация]. Я занимаюсь [краткое описание вашей деятельности]. В этом портфолио вы найдете мои проекты, базу знаний и полезные материалы.</p>
+                    <p>Мои ключевые навыки:</p>
+                    <ul>
+                        <li>Навык 1</li>
+                        <li>Навык 2</li>
+                        <li>Навык 3</li>
+                    </ul>
                 </section>
                 <section class="knowledge-base">
-                    <h2 class="h4">База знаний</h2>
+                    <h2 class="h4 mb-4"><i class="fas fa-book me-2"></i>База знаний</h2>
                     <ul id="docs-list" class="list-unstyled"></ul>
                 </section>
             </main>
 
             <!-- Правый сайдбар -->
             <aside class="col-lg-3 p-4 bg-light">
-                <h2 class="h4 mb-4">Мои репозитории</h2>
+                <h2 class="h4 mb-4"><i class="fas fa-code me-2"></i>Мои репозитории</h2>
                 <input type="text" id="search-repos" class="form-control mb-4" placeholder="Поиск репозиториев...">
                 <ul id="repos-list" class="list-unstyled"></ul>
             </aside>

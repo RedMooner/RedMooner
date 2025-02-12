@@ -1,13 +1,21 @@
-/* Кастомные стили */
+/* Основные стили */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
 }
 
+/* Шапка */
+header {
+    background-color: #007bff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Аватарка */
 .avatar {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    border: 3px solid #007bff;
 }
 
 .profile h1 {
@@ -29,10 +37,10 @@ body {
 }
 
 .profile ul li a:hover {
-    color: #0366d6;
+    color: #007bff;
 }
 
-/* Стили для аккордеонов */
+/* Аккордеоны */
 .repo-header, .doc-header {
     cursor: pointer;
     padding: 15px;
@@ -43,17 +51,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .repo-header:hover, .doc-header:hover {
     background-color: #f8f9fa;
+    transform: translateY(-2px);
 }
 
 .repo-header h3, .doc-header h3 {
     margin: 0;
     font-size: 1.1rem;
-    color: #0366d6;
+    color: #007bff;
 }
 
 .repo-details, .doc-details {
@@ -75,24 +84,35 @@ body {
     opacity: 1;
 }
 
+/* Теги */
 .repo-tags, .doc-tags {
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.repo-tags:hover, .doc-tags:hover {
+    max-height: 200px; /* Показываем все теги при наведении */
 }
 
 .repo-tags span, .doc-tags span {
     display: inline-block;
     background-color: #e1ecf4;
-    color: #0366d6;
+    color: #007bff;
     padding: 5px 10px;
     border-radius: 15px;
-    margin-right: 5px;
     font-size: 0.9rem;
 }
 
+/* Ссылки */
 .repo-link, .doc-link {
     display: block;
     margin-top: 10px;
-    color: #0366d6;
+    color: #007bff;
     text-decoration: none;
 }
 
@@ -100,7 +120,7 @@ body {
     text-decoration: underline;
 }
 
-/* Стили для правого сайдбара */
+/* Правый сайдбар */
 aside.col-lg-3 {
     background-color: #f8f9fa;
     border-left: 1px solid #ddd;

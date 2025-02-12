@@ -128,4 +128,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const details = item.querySelector('.repo-details');
         details.classList.toggle('open');
     }
+    document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-about');
+    const aboutContent = document.getElementById('about-content');
+
+    // Изначально сворачиваем блок
+    aboutContent.classList.remove('open');
+
+    toggleButton.addEventListener('click', () => {
+        aboutContent.classList.toggle('open');
+    });
+});
 });

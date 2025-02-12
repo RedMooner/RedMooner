@@ -270,3 +270,21 @@ aside.col-lg-3 h2 {
     max-height: 1000px; /* Увеличьте это значение, если контента много */
     opacity: 1;
 }
+/* Стили для сворачивания/разворачивания блока */
+#about-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+#about-content.open {
+    max-height: 2000px; /* Увеличьте это значение, если контент больше */
+}
+
+/* Правый сайдбар на всю высоту */
+aside.col-lg-3 {
+    height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+}

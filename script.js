@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    
+    
+     const toggleButton = document.getElementById('toggle-about');
+    const aboutContent = document.getElementById('about-content');
+
+    // Изначально сворачиваем блок
+    aboutContent.classList.remove('open');
+
+    toggleButton.addEventListener('click', () => {
+        aboutContent.classList.toggle('open');
+    });
+    
+    
+    
+    
     const username = 'Redmooner'; // Замените на ваш GitHub username
     const reposList = document.getElementById('repos-list');
     const docsList = document.getElementById('docs-list');
@@ -123,20 +139,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Анимация аккордеона
-    function toggleAccordion(item) {
-        const details = item.querySelector('.repo-details');
-        details.classList.toggle('open');
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('toggle-about');
-    const aboutContent = document.getElementById('about-content');
 
-    // Изначально сворачиваем блок
-    aboutContent.classList.remove('open');
-
-    toggleButton.addEventListener('click', () => {
-        aboutContent.classList.toggle('open');
-    });
-});
 });

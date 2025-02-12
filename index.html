@@ -10,29 +10,29 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-theme">
     <!-- Шапка сайта -->
-    <header class="bg-primary text-white text-center py-4">
+    <header class="bg-dark text-white text-center py-4">
         <h1 class="mb-0">Портфолио и база знаний</h1>
     </header>
 
     <div class="container-fluid">
         <div class="row">
             <!-- Левый сайдбар -->
-            <aside class="col-md-3 col-lg-2 bg-light p-4">
+            <aside class="col-md-3 col-lg-2 bg-dark text-white p-4">
                 <div class="profile text-center">
-                    <img src="https://via.placeholder.com/150" alt="Аватарка" class="avatar rounded-circle mb-3">
-                    <h1 class="h5">Фамилия Имя</h1>
+                    <img src="47520961.jfif" alt="Аватарка" class="avatar rounded-circle mb-3">
+                    <h1 class="h5">Мотырев Александр</h1>
                     <ul class="list-unstyled">
-                        <li><a href="mailto:example@example.com" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>Email</a></li>
-                        <li><a href="https://github.com/username" class="text-decoration-none text-dark"><i class="fab fa-github me-2"></i>GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/username" class="text-decoration-none text-dark"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+                        <li><a href="mailto:example@example.com" class="text-decoration-none text-white"><i class="fas fa-envelope me-2"></i>Email</a></li>
+                        <li><a href="https://github.com/username" class="text-decoration-none text-white"><i class="fab fa-github me-2"></i>GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/username" class="text-decoration-none text-white"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
                     </ul>
                 </div>
             </aside>
 
             <!-- Основной контент -->
-            <main class="col-md-9 col-lg-7 p-4">
+            <main class="col-md-9 col-lg-7 p-4 bg-dark text-white">
                 <section class="about-me mb-5">
                     <h2 class="h4 mb-4"><i class="fas fa-user me-2"></i>Обо мне</h2>
                     <p class="lead">Привет! Меня зовут [Ваше имя], и я [ваша профессия или специализация]. Я занимаюсь [краткое описание вашей деятельности]. В этом портфолио вы найдете мои проекты, базу знаний и полезные материалы.</p>
@@ -45,14 +45,17 @@
                 </section>
                 <section class="knowledge-base">
                     <h2 class="h4 mb-4"><i class="fas fa-book me-2"></i>База знаний</h2>
+                    <div class="mb-4">
+                        <input type="text" id="search-docs" class="form-control bg-dark text-white" placeholder="Поиск по базе знаний...">
+                    </div>
                     <ul id="docs-list" class="list-unstyled"></ul>
                 </section>
             </main>
 
             <!-- Правый сайдбар -->
-            <aside class="col-lg-3 p-4 bg-light">
+            <aside class="col-lg-3 p-4 bg-dark text-white">
                 <h2 class="h4 mb-4"><i class="fas fa-code me-2"></i>Мои репозитории</h2>
-                <input type="text" id="search-repos" class="form-control mb-4" placeholder="Поиск репозиториев...">
+                <input type="text" id="search-repos" class="form-control mb-4 bg-dark text-white" placeholder="Поиск репозиториев...">
                 <ul id="repos-list" class="list-unstyled"></ul>
             </aside>
         </div>

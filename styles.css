@@ -1,13 +1,29 @@
-/* Основные стили */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+/* Темная тема */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-/* Шапка */
-header {
-    background-color: #007bff !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+header.bg-dark {
+    background-color: #1f1f1f !important;
+}
+
+.bg-dark {
+    background-color: #1f1f1f !important;
+}
+
+.bg-light {
+    background-color: #2d2d2d !important;
+}
+
+.form-control.bg-dark {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #444;
+}
+
+.form-control.bg-dark::placeholder {
+    color: #aaa;
 }
 
 /* Аватарка */
@@ -32,7 +48,7 @@ header {
 }
 
 .profile ul li a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -44,8 +60,8 @@ header {
 .repo-header, .doc-header {
     cursor: pointer;
     padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
     border-radius: 8px;
     margin-bottom: 10px;
     display: flex;
@@ -55,7 +71,7 @@ header {
 }
 
 .repo-header:hover, .doc-header:hover {
-    background-color: #f8f9fa;
+    background-color: #3d3d3d;
     transform: translateY(-2px);
 }
 
@@ -67,8 +83,8 @@ header {
 
 .repo-details, .doc-details {
     padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
     border-top: none;
     border-radius: 0 0 8px 8px;
     margin-top: -10px;
@@ -101,11 +117,16 @@ header {
 
 .repo-tags span, .doc-tags span {
     display: inline-block;
-    background-color: #e1ecf4;
-    color: #007bff;
+    background-color: #007bff;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.repo-tags span:hover, .doc-tags span:hover {
+    transform: scale(1.1);
 }
 
 /* Ссылки */
@@ -122,8 +143,8 @@ header {
 
 /* Правый сайдбар */
 aside.col-lg-3 {
-    background-color: #f8f9fa;
-    border-left: 1px solid #ddd;
+    background-color: #1f1f1f;
+    border-left: 1px solid #444;
     height: 100vh;
     overflow-y: auto;
 }
@@ -131,7 +152,17 @@ aside.col-lg-3 {
 aside.col-lg-3 h2 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #333;
+    color: #fff;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
 }
 
 /* Адаптивность */
@@ -157,6 +188,6 @@ aside.col-lg-3 h2 {
     aside.col-lg-3 {
         height: auto;
         border-left: none;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid #444;
     }
 }

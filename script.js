@@ -2,9 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const username = 'Redmooner'; // Замените на ваш GitHub username
     const reposList = document.getElementById('repos-list');
     const docsList = document.getElementById('docs-list');
-    const searchInput = document.getElementById('search-repos');
+    const searchReposInput = document.getElementById('search-repos');
+    const searchDocsInput = document.getElementById('search-docs');
 
     let allRepos = [];
+    let allDocs = [];
 
     // Получаем репозитории
     fetch(`https://api.github.com/users/${username}/repos`)
@@ -12,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(repos => {
             allRepos = repos;
             renderRepos(repos);
-            renderDocs(repos);
+            allDocs = repos.filter(repo => repo.topics && repo.topics.includes('docs'));
+            renderDocs(allDocs);
         })
         .catch(error => {
             console.error('Ошибка при загрузке репозиториев:', error);
@@ -20,10 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Поиск репозиториев
-    searchInput.addEventListener('input', (e) => {
+    searchReposInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase();
         const filteredRepos = allRepos.filter(repo => repo.name.toLowerCase().includes(searchTerm));
         renderRepos(filteredRepos);
+    });
+
+    // Поиск по базе знаний
+    searchDocsInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredDocs = allDocs.filter(doc => doc.name.toLowerCase().includes(searchTerm));
+        renderDocs(filteredDocs);
     });
 
     // Рендер всех репозиториев
@@ -31,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         reposList.innerHTML = '';
         repos.forEach(repo => {
             const listItem = document.createElement('li');
+            listItem.classList.add('fade-in');
             const repoHeader = document.createElement('div');
             repoHeader.classList.add('repo-header');
             const repoTitle = document.createElement('h3');
@@ -73,43 +84,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Рендер репозиториев с тегом docs
-    function renderDocs(repos) {
+    function renderDocs(docs) {
         docsList.innerHTML = '';
-        repos.forEach(repo => {
-            if (repo.topics && repo.topics.includes('docs')) {
-                const docItem = document.createElement('li');
-                const docHeader = document.createElement('div');
-                docHeader.classList.add('doc-header');
-                const docTitle = document.createElement('h3');
-                docTitle.textContent = repo.name;
+        docs.forEach(doc => {
+            const docItem = document.createElement('li');
+            docItem.classList.add('fade-in');
+            const docHeader = document.createElement('div');
+            docHeader.classList.add('doc-header');
+            const docTitle = document.createElement('h3');
+            docTitle.textContent = doc.name;
 
-                const docDetails = document.createElement('div');
-                docDetails.classList.add('doc-details', 'open'); // Всегда открыт
-                const docDescription = document.createElement('p');
-                docDescription.textContent = repo.description || 'Описание отсутствует';
+            const docDetails = document.createElement('div');
+            docDetails.classList.add('doc-details', 'open');
+            const docDescription = document.createElement('p');
+            docDescription.textContent = doc.description || 'Описание отсутствует';
 
-                const docTags = document.createElement('div');
-                docTags.classList.add('doc-tags');
-                repo.topics.forEach(topic => {
-                    const tag = document.createElement('span');
-                    tag.textContent = `#${topic}`;
-                    docTags.appendChild(tag);
-                });
+            const docTags = document.createElement('div');
+            docTags.classList.add('doc-tags');
+            doc.topics.forEach(topic => {
+                const tag = document.createElement('span');
+                tag.textContent = `#${topic}`;
+                docTags.appendChild(tag);
+            });
 
-                const docLink = document.createElement('a');
-                docLink.href = `https://${username}.github.io/${repo.name}`;
-                docLink.textContent = 'Открыть страницу';
-                docLink.classList.add('doc-link');
-                docLink.target = '_blank';
+            const docLink = document.createElement('a');
+            docLink.href = `https://${username}.github.io/${doc.name}`;
+            docLink.textContent = 'Открыть страницу';
+            docLink.classList.add('doc-link');
+            docLink.target = '_blank';
 
-                docHeader.appendChild(docTitle);
-                docDetails.appendChild(docDescription);
-                docDetails.appendChild(docTags);
-                docDetails.appendChild(docLink);
-                docItem.appendChild(docHeader);
-                docItem.appendChild(docDetails);
-                docsList.appendChild(docItem);
-            }
+            docHeader.appendChild(docTitle);
+            docDetails.appendChild(docDescription);
+            docDetails.appendChild(docTags);
+            docDetails.appendChild(docLink);
+            docItem.appendChild(docHeader);
+            docItem.appendChild(docDetails);
+            docsList.appendChild(docItem);
         });
     }
 

@@ -276,3 +276,26 @@ aside.col-lg-3 {
     position: sticky;
     top: 0;
 }
+.main-info {
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    overflow: hidden;
+    max-height: 5000px; /* Начальная высота, чтобы вместить весь контент */
+    opacity: 1;
+}
+
+.main-info.collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#toggle-info {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-info:hover {
+    background-color: #0056b3;
+}

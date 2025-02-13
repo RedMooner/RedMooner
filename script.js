@@ -128,4 +128,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const details = item.querySelector('.repo-details');
         details.classList.toggle('open');
     }
+    const toggleButton = document.getElementById('toggle-info');
+    const mainInfo = document.querySelector('.main-info');
+
+    toggleButton.addEventListener('click', () => {
+        mainInfo.classList.toggle('collapsed');
+        if (mainInfo.classList.contains('collapsed')) {
+            toggleButton.textContent = 'Показать информацию';
+        } else {
+            toggleButton.textContent = 'Скрыть информацию';
+        }
+    });
 });

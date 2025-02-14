@@ -606,3 +606,175 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Левый сайдбар */
+aside.col-md-3 {
+    background-color: #1f1f1f;
+    border-right: 1px solid #444;
+    height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Анимация при наведении на сайдбар */
+aside.col-md-3:hover {
+    background-color: #2d2d2d;
+    transform: translateX(5px);
+}
+
+/* Стили для аватара в сайдбаре */
+.profile {
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Стили для заголовка в сайдбаре */
+.profile h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.profile:hover h1 {
+    color: #007bff;
+}
+
+/* Стили для списка контактов в сайдбаре */
+
+
+.profile ul li {
+
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Задержка анимации для каждого элемента списка */
+.profile ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.profile ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.profile ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Стили для ссылок в сайдбаре */
+.profile ul li a {
+    color: #fff;
+
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.profile ul li a i {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.profile ul li a:hover {
+    color: #007bff;
+    transform: translateX(5px);
+}
+
+.profile ul li a:hover i {
+    transform: scale(1.2);
+}
+
+/* Стили для скроллбара в сайдбаре */
+aside.col-md-3::-webkit-scrollbar {
+    width: 8px;
+}
+
+aside.col-md-3::-webkit-scrollbar-track {
+    background: #1f1f1f;
+}
+
+aside.col-md-3::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+aside.col-md-3::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Адаптивность для сайдбара */
+@media (max-width: 768px) {
+    aside.col-md-3 {
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #444;
+        padding: 10px;
+    }
+
+    .profile {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile h1 {
+        font-size: 1.25rem;
+    }
+
+    .profile ul li a {
+        font-size: 0.9rem;
+    }
+
+    .profile ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

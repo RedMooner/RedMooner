@@ -394,3 +394,215 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+/* Стили для секций внутри .main-info и секции .about-me */
+.main-info section, .about-me {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-info section:hover, .about-me:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовки секций внутри .main-info и секции .about-me */
+.main-info section h2, .about-me h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.main-info section h2::after, .about-me h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.main-info section:hover h2::after, .about-me:hover h2::after {
+    width: 100px;
+}
+
+/* Стили для текста и списков внутри .main-info и секции .about-me */
+.main-info section p, .main-info section ul, .about-me p, .about-me ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.main-info section ul, .about-me ul {
+    padding-left: 1.5rem;
+}
+
+.main-info section ul li, .about-me ul li {
+    margin-bottom: 0.5rem;
+}
+
+.main-info section ul li strong, .about-me ul li strong {
+    color: #007bff;
+}
+
+/* Анимация для списков внутри .main-info и секции .about-me */
+.main-info section ul li, .about-me ul li {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Задержка анимации для каждого элемента списка */
+.main-info section ul li:nth-child(1), .about-me ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.main-info section ul li:nth-child(2), .about-me ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.main-info section ul li:nth-child(3), .about-me ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.main-info section ul li:nth-child(4), .about-me ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.main-info section ul li:nth-child(5), .about-me ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Стили для кнопки "Показать информацию" */
+#toggle-info {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#toggle-info:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Анимация для основного блока информации */
+.main-info {
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    overflow: hidden;
+    max-height: 5000px; /* Начальная высота, чтобы вместить весь контент */
+    opacity: 1;
+}
+
+.main-info.collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Анимация для аватара */
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Анимация для ссылок в профиле */
+.profile ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.profile ul li a:hover {
+    color: #007bff;
+    transform: translateX(5px);
+}
+
+/* Анимация для заголовков репозиториев */
+.repo-header h3, .doc-header h3 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.repo-header:hover h3, .doc-header:hover h3 {
+    color: #007bff;
+    transform: translateX(5px);
+}
+
+/* Анимация для тегов */
+.repo-tags span, .doc-tags span {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.repo-tags span:hover, .doc-tags span:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Анимация для кнопки скачивания */
+.btn-primary {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Анимация для таббара */
+.nav-tabs .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #3d3d3d;
+    color: #007bff;
+}
+
+/* Анимация для аккордеона */
+.accordion-button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #3d3d3d;
+    color: #007bff;
+}
+
+/* Анимация для изображений сертификатов */
+.img-fluid {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}

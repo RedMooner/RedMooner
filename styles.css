@@ -658,7 +658,7 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 aside.col-md-3 {
     background-color: #1f1f1f;
     border-right: 1px solid #444;
-    height: 100vh;
+ 
     overflow-y: auto;
     top: 0;
     transition: background-color 0.3s ease, transform 0.3s ease;

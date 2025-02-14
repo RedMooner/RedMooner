@@ -648,15 +648,6 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 }
 
 /* Анимация для изображений сертификатов */
-.img-fluid {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.img-fluid:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
-}
-
 
 
 
@@ -845,4 +836,97 @@ aside.col-md-3::-webkit-scrollbar-thumb:hover {
 .github-info i {
     color: #007bff;
     margin-right: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+/* Анимация для переключения вкладок */
+.tab-pane.fade {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tab-pane.fade:not(.show) {
+    opacity: 0;
+}
+
+.tab-pane.fade.show {
+    opacity: 1;
+}
+
+/* Анимация для кнопок вкладок */
+.nav-tabs .nav-link {
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #3d3d3d;
+    transform: translateY(-3px);
+    color: #007bff;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #1f1f1f;
+    border-color: #444;
+    border-bottom-color: #1f1f1f;
+    color: #007bff;
+    transform: translateY(-3px);
+}
+
+/* Анимация для списка документов и сертификатов */
+
+/* Задержка анимации для каждого элемента списка */
+
+
+.accordion-collapse.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Hover-эффекты для элементов списка */
+#docs-list li,
+.accordion-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#docs-list li:hover,
+.accordion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимация для поля поиска */
+#search-docs,
+#search-repos {
+    transition: width 0.3s ease, padding 0.3s ease;
+    width: 200px;
+}
+
+#search-docs:focus,
+#search-repos:focus {
+    width: 300px;
+    padding: 10px;
+}
+
+/* Анимация для кнопки скачивания */
+
+
+
+
+/* Анимация для изображений сертификатов */
+
+
+/* Анимация для заголовков вкладок */
+.nav-tabs .nav-link h3 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover h3 {
+    color: #007bff;
+    transform: translateX(5px);
 }

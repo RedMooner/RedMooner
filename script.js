@@ -5,8 +5,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchReposInput = document.getElementById('search-repos');
     const searchDocsInput = document.getElementById('search-docs');
 
+    const followersElement = document.getElementById('followers');
+    const followingElement = document.getElementById('following');
+    const locationElement = document.getElementById('location');
+    const localTimeElement = document.getElementById('local-time');
+
     let allRepos = [];
     let allDocs = [];
+
+    // Получаем репозитории и информацию о пользователе
+    fetch(`https://api.github.com/users/${username}`)
+        .then(response => response.json())
+        .then(user => {
+            followersElement.textContent = user.followers;
+            followingElement.textContent = user.following;
+            locationElement.textContent = user.location || 'Не указано';
+
+            // Обновляем время каждую минуту
+            setInterval(() => {
+                const now = new Date();
+                const options = { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Yekaterinburg' };
+                localTimeElement.textContent = now.toLocaleTimeString('ru-RU', options) + ' (UTC +05:00)';
+            }, 1000);
+        })
+        .catch(error => {
+            console.error('Ошибка при загрузке данных пользователя:', error);
+        });
 
     // Получаем репозитории
     fetch(`https://api.github.com/users/${username}/repos`)
@@ -128,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const details = item.querySelector('.repo-details');
         details.classList.toggle('open');
     }
+
     const toggleButton = document.getElementById('toggle-info');
     const mainInfo = document.querySelector('.main-info');
 
@@ -141,63 +166,60 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Пример динамической загрузки сертификатов
-const certificates = [
-    {
-        title: "Администрирование TATLIN UNIFIED GEN2",
-        image: "certs/certificate1.jpg",
-        download: "certs/certificate1.jpg"
-    },
-    // Добавьте больше сертификатов по аналогии
-];
+    const certificates = [
+        {
+            title: "Администрирование TATLIN UNIFIED GEN2",
+            image: "certs/certificate1.jpg",
+            download: "certs/certificate1.jpg"
+        },
+        // Добавьте больше сертификатов по аналогии
+    ];
 
-const certificatesAccordion = document.getElementById('certificatesAccordion');
+    const certificatesAccordion = document.getElementById('certificatesAccordion');
 
-certificates.forEach((cert, index) => {
-    const accordionItem = document.createElement('div');
-    accordionItem.classList.add('accordion-item', 'bg-dark');
+    certificates.forEach((cert, index) => {
+        const accordionItem = document.createElement('div');
+        accordionItem.classList.add('accordion-item', 'bg-dark');
 
-    const accordionHeader = document.createElement('h2');
-    accordionHeader.classList.add('accordion-header');
-    accordionHeader.id = `heading${index}`;
+        const accordionHeader = document.createElement('h2');
+        accordionHeader.classList.add('accordion-header');
+        accordionHeader.id = `heading${index}`;
 
-    const accordionButton = document.createElement('button');
-    accordionButton.classList.add('accordion-button', 'bg-dark', 'text-white');
-    accordionButton.type = 'button';
-    accordionButton.setAttribute('data-bs-toggle', 'collapse');
-    accordionButton.setAttribute('data-bs-target', `#collapse${index}`);
-    accordionButton.setAttribute('aria-expanded', 'false');
-    accordionButton.setAttribute('aria-controls', `collapse${index}`);
-    accordionButton.textContent = cert.title;
+        const accordionButton = document.createElement('button');
+        accordionButton.classList.add('accordion-button', 'bg-dark', 'text-white');
+        accordionButton.type = 'button';
+        accordionButton.setAttribute('data-bs-toggle', 'collapse');
+        accordionButton.setAttribute('data-bs-target', `#collapse${index}`);
+        accordionButton.setAttribute('aria-expanded', 'false');
+        accordionButton.setAttribute('aria-controls', `collapse${index}`);
+        accordionButton.textContent = cert.title;
 
-    const accordionCollapse = document.createElement('div');
-    accordionCollapse.id = `collapse${index}`;
-    accordionCollapse.classList.add('accordion-collapse', 'collapse');
-    accordionCollapse.setAttribute('aria-labelledby', `heading${index}`);
-    accordionCollapse.setAttribute('data-bs-parent', '#certificatesAccordion');
+        const accordionCollapse = document.createElement('div');
+        accordionCollapse.id = `collapse${index}`;
+        accordionCollapse.classList.add('accordion-collapse', 'collapse');
+        accordionCollapse.setAttribute('aria-labelledby', `heading${index}`);
+        accordionCollapse.setAttribute('data-bs-parent', '#certificatesAccordion');
 
-    const accordionBody = document.createElement('div');
-    accordionBody.classList.add('accordion-body');
+        const accordionBody = document.createElement('div');
+        accordionBody.classList.add('accordion-body');
 
-    const certImage = document.createElement('img');
-    certImage.src = cert.image;
-    certImage.alt = cert.title;
-    certImage.classList.add('img-fluid', 'mb-3');
+        const certImage = document.createElement('img');
+        certImage.src = cert.image;
+        certImage.alt = cert.title;
+        certImage.classList.add('img-fluid', 'mb-3');
 
-    const downloadLink = document.createElement('a');
-    downloadLink.href = cert.download;
-    downloadLink.download = cert.download;
-    downloadLink.classList.add('btn', 'btn-primary');
-    downloadLink.textContent = 'Скачать';
+        const downloadLink = document.createElement('a');
+        downloadLink.href = cert.download;
+        downloadLink.download = cert.download;
+        downloadLink.classList.add('btn', 'btn-primary');
+        downloadLink.textContent = 'Скачать';
 
-    accordionBody.appendChild(certImage);
-    accordionBody.appendChild(downloadLink);
-    accordionCollapse.appendChild(accordionBody);
-    accordionHeader.appendChild(accordionButton);
-    accordionItem.appendChild(accordionHeader);
-    accordionItem.appendChild(accordionCollapse);
-    certificatesAccordion.appendChild(accordionItem);
+        accordionBody.appendChild(certImage);
+        accordionBody.appendChild(downloadLink);
+        accordionCollapse.appendChild(accordionBody);
+        accordionHeader.appendChild(accordionButton);
+        accordionItem.appendChild(accordionHeader);
+        accordionItem.appendChild(accordionCollapse);
+        certificatesAccordion.appendChild(accordionItem);
+    });
 });
-
-
-});
-

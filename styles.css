@@ -57,7 +57,8 @@ header.bg-dark {
 }
 
 /* Аккордеоны */
-.repo-header, .doc-header {
+.repo-header,
+.doc-header {
     cursor: pointer;
     padding: 15px;
     background-color: #2d2d2d;
@@ -70,18 +71,21 @@ header.bg-dark {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.repo-header:hover, .doc-header:hover {
+.repo-header:hover,
+.doc-header:hover {
     background-color: #3d3d3d;
     transform: translateY(-2px);
 }
 
-.repo-header h3, .doc-header h3 {
+.repo-header h3,
+.doc-header h3 {
     margin: 0;
     font-size: 1.1rem;
     color: #007bff;
 }
 
-.repo-details, .doc-details {
+.repo-details,
+.doc-details {
     padding: 15px;
     background-color: #2d2d2d;
     border: 1px solid #444;
@@ -95,13 +99,15 @@ header.bg-dark {
     opacity: 0;
 }
 
-.repo-details.open, .doc-details.open {
+.repo-details.open,
+.doc-details.open {
     max-height: 500px;
     opacity: 1;
 }
 
 /* Теги */
-.repo-tags, .doc-tags {
+.repo-tags,
+.doc-tags {
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -111,11 +117,14 @@ header.bg-dark {
     transition: max-height 0.3s ease;
 }
 
-.repo-tags:hover, .doc-tags:hover {
-    max-height: 200px; /* Показываем все теги при наведении */
+.repo-tags:hover,
+.doc-tags:hover {
+    max-height: 200px;
+    /* Показываем все теги при наведении */
 }
 
-.repo-tags span, .doc-tags span {
+.repo-tags span,
+.doc-tags span {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
@@ -125,19 +134,22 @@ header.bg-dark {
     transition: transform 0.2s ease;
 }
 
-.repo-tags span:hover, .doc-tags span:hover {
+.repo-tags span:hover,
+.doc-tags span:hover {
     transform: scale(1.1);
 }
 
 /* Ссылки */
-.repo-link, .doc-link {
+.repo-link,
+.doc-link {
     display: block;
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
 }
 
-.repo-link:hover, .doc-link:hover {
+.repo-link:hover,
+.doc-link:hover {
     text-decoration: underline;
 }
 
@@ -157,8 +169,13 @@ aside.col-lg-3 h2 {
 
 /* Анимации */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .fade-in {
@@ -171,7 +188,11 @@ aside.col-lg-3 h2 {
         padding: 0;
     }
 
-    .col-md-3, .col-md-9, .col-lg-2, .col-lg-7, .col-lg-3 {
+    .col-md-3,
+    .col-md-9,
+    .col-lg-2,
+    .col-lg-7,
+    .col-lg-3 {
         width: 100%;
         padding: 10px;
     }
@@ -227,7 +248,8 @@ aside.col-lg-3 h2 {
 }
 
 .about-me-details.open {
-    max-height: 1000px; /* Увеличьте это значение, если контента много */
+    max-height: 1000px;
+    /* Увеличьте это значение, если контента много */
     opacity: 1;
 }
 
@@ -267,19 +289,23 @@ aside.col-lg-3 h2 {
 }
 
 .about-me-details.open {
-    max-height: 1000px; /* Увеличьте это значение, если контента много */
+    max-height: 1000px;
+    /* Увеличьте это значение, если контента много */
     opacity: 1;
 }
+
 aside.col-lg-3 {
     height: 100vh;
     overflow-y: auto;
     position: sticky;
     top: 0;
 }
+
 .main-info {
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     overflow: hidden;
-    max-height: 5000px; /* Начальная высота, чтобы вместить весь контент */
+    max-height: 5000px;
+    /* Начальная высота, чтобы вместить весь контент */
     opacity: 1;
 }
 
@@ -298,7 +324,9 @@ aside.col-lg-3 {
 
 #toggle-info:hover {
     background-color: #0056b3;
-}aside.col-lg-3::-webkit-scrollbar {
+}
+
+aside.col-lg-3::-webkit-scrollbar {
     width: 8px;
 }
 
@@ -396,7 +424,8 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 }
 
 /* Стили для секций внутри .main-info и секции .about-me */
-.main-info section, .about-me {
+.main-info section,
+.about-me {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background-color: #2d2d2d;
@@ -405,13 +434,15 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.main-info section:hover, .about-me:hover {
+.main-info section:hover,
+.about-me:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Заголовки секций внутри .main-info и секции .about-me */
-.main-info section h2, .about-me h2 {
+.main-info section h2,
+.about-me h2 {
     font-size: 1.5rem;
     color: #007bff;
     margin-bottom: 1.5rem;
@@ -419,7 +450,8 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
     padding-bottom: 0.5rem;
 }
 
-.main-info section h2::after, .about-me h2::after {
+.main-info section h2::after,
+.about-me h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -431,31 +463,39 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
     transition: width 0.3s ease;
 }
 
-.main-info section:hover h2::after, .about-me:hover h2::after {
+.main-info section:hover h2::after,
+.about-me:hover h2::after {
     width: 100px;
 }
 
 /* Стили для текста и списков внутри .main-info и секции .about-me */
-.main-info section p, .main-info section ul, .about-me p, .about-me ul {
+.main-info section p,
+.main-info section ul,
+.about-me p,
+.about-me ul {
     font-size: 1rem;
     line-height: 1.6;
     color: #ddd;
 }
 
-.main-info section ul, .about-me ul {
+.main-info section ul,
+.about-me ul {
     padding-left: 1.5rem;
 }
 
-.main-info section ul li, .about-me ul li {
+.main-info section ul li,
+.about-me ul li {
     margin-bottom: 0.5rem;
 }
 
-.main-info section ul li strong, .about-me ul li strong {
+.main-info section ul li strong,
+.about-me ul li strong {
     color: #007bff;
 }
 
 /* Анимация для списков внутри .main-info и секции .about-me */
-.main-info section ul li, .about-me ul li {
+.main-info section ul li,
+.about-me ul li {
     opacity: 0;
     transform: translateX(-20px);
     animation: fadeInLeft 0.5s ease forwards;
@@ -469,23 +509,28 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 }
 
 /* Задержка анимации для каждого элемента списка */
-.main-info section ul li:nth-child(1), .about-me ul li:nth-child(1) {
+.main-info section ul li:nth-child(1),
+.about-me ul li:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.main-info section ul li:nth-child(2), .about-me ul li:nth-child(2) {
+.main-info section ul li:nth-child(2),
+.about-me ul li:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.main-info section ul li:nth-child(3), .about-me ul li:nth-child(3) {
+.main-info section ul li:nth-child(3),
+.about-me ul li:nth-child(3) {
     animation-delay: 0.3s;
 }
 
-.main-info section ul li:nth-child(4), .about-me ul li:nth-child(4) {
+.main-info section ul li:nth-child(4),
+.about-me ul li:nth-child(4) {
     animation-delay: 0.4s;
 }
 
-.main-info section ul li:nth-child(5), .about-me ul li:nth-child(5) {
+.main-info section ul li:nth-child(5),
+.about-me ul li:nth-child(5) {
     animation-delay: 0.5s;
 }
 
@@ -510,7 +555,8 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 .main-info {
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     overflow: hidden;
-    max-height: 5000px; /* Начальная высота, чтобы вместить весь контент */
+    max-height: 5000px;
+    /* Начальная высота, чтобы вместить весь контент */
     opacity: 1;
 }
 
@@ -548,21 +594,25 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 }
 
 /* Анимация для заголовков репозиториев */
-.repo-header h3, .doc-header h3 {
+.repo-header h3,
+.doc-header h3 {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.repo-header:hover h3, .doc-header:hover h3 {
+.repo-header:hover h3,
+.doc-header:hover h3 {
     color: #007bff;
     transform: translateX(5px);
 }
 
 /* Анимация для тегов */
-.repo-tags span, .doc-tags span {
+.repo-tags span,
+.doc-tags span {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.repo-tags span:hover, .doc-tags span:hover {
+.repo-tags span:hover,
+.doc-tags span:hover {
     background-color: #0056b3;
     transform: scale(1.1);
 }
@@ -613,22 +663,13 @@ aside.col-lg-3::-webkit-scrollbar-thumb:hover {
 
 
 
-
-
-
-
-
-
-
-
-
 /* Левый сайдбар */
 aside.col-md-3 {
     background-color: #1f1f1f;
     border-right: 1px solid #444;
     height: 100vh;
     overflow-y: auto;
-  
+    position: sticky;
     top: 0;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -777,4 +818,31 @@ aside.col-md-3::-webkit-scrollbar-thumb:hover {
         flex-direction: row;
         justify-content: center;
     }
+}
+
+
+/* Стили для информации о GitHub */
+.github-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.github-info p {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 0.5rem;
+}
+
+.github-info i {
+    color: #007bff;
+    margin-right: 0.5rem;
 }

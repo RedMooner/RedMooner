@@ -929,3 +929,25 @@ aside.col-md-3::-webkit-scrollbar-thumb:hover {
     color: #007bff;
     transform: translateX(5px);
 }
+/* Анимация для текста и ссылок в подвале */
+footer p, footer a {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Задержка анимации для элементов подвала */
+footer p {
+    animation-delay: 0.2s;
+}
+
+footer a {
+    animation-delay: 0.4s;
+}
